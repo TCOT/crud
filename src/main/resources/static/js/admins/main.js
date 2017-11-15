@@ -9,6 +9,8 @@ $(function() {
             success: function(data){
                 // alert('5')
                 $("#rightContainer").html(data);
+                // alert(data)
+                // console.log(1)
             },
             error : function() {
                 alert("error");

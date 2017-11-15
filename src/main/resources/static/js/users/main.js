@@ -6,7 +6,7 @@ $(function() {
                 url:"/users/" + text +'/search',
                 success:function(data){
                     // alert(2)
-                    $("#mainContainer").html(data);
+                    $("#mainContainerRepleace").html(data);
                 },
                 error:function(data){
                     alert("error")
@@ -14,6 +14,7 @@ $(function() {
             })
     });
 
+    //编辑
     $("#rightContainer").on("click",".blog-edit-user", function () {
         $.ajax({
             url: "/users/" + $(this).attr("userId") +"/edit",
@@ -25,7 +26,8 @@ $(function() {
             }
         });
     });
-    
+
+    //增加
     $("#addUser").click(function() {
         $.ajax({
             url: "/users/add",
@@ -68,7 +70,9 @@ $(function() {
         });
     });
 
-    $("#rightContainer").on("click",".blog-delete-user", function () {
+    //删除
+    // alert(1)
+    $("#mainContainer").on("click",".blog-delete-user", function () {
         $.ajax({
             url: "/users/" + $(this).attr("userId") ,
             type: 'DELETE',
@@ -77,6 +81,7 @@ $(function() {
                     $.ajax({
                         url: "/users/flush",
                         success: function(data){
+                            // console.log(1)
                             $("#mainContainer").html(data);
                         },
                         error : function() {

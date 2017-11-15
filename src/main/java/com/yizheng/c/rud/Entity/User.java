@@ -2,6 +2,9 @@ package com.yizheng.c.rud.Entity;
 
 import javax.persistence.*;
 
+/**
+ *实体层，使用Hibernate数据持久化
+ */
 @Entity
 public class User {
     @Id
