@@ -1,4 +1,5 @@
 $(function() {
+    //模糊搜索
     $("#searchNameBtn").click(function() {
         var text = $('#searchName').val();
         // alert(text);
